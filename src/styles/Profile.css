@@ -9,7 +9,6 @@
 
 .profile-heading {
   text-align: center;
-  color: #333;
   font-size: 24px;
   margin-bottom: 15px;
 }
@@ -21,8 +20,6 @@
 .profile-field label {
   display: block;
   font-weight: bold;
-  color: #555;
-  margin-bottom: 5px;
 }
 
 .profile-field input {
@@ -30,7 +27,6 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 14px;
 }
 
 .button-group {
@@ -39,11 +35,11 @@
   margin-top: 15px;
 }
 
-.edit-btn, .save-btn, .cancel-btn {
+.edit-btn,
+.save-btn,
+.cancel-btn {
   width: 48%;
   padding: 10px;
-  border: none;
-  border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
 }

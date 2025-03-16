@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../styles/Profile.css"; // Keep styles
+import "../styles/Profile.css";
 
 const Profile = () => {
-    const id = localStorage.getItem("userId"); // Ensure userId is stored
-
+    const userId = 15 // Hardcoded for now, replace with localStorage.getItem("userId")
     const [formData, setFormData] = useState({
         first_name: "",
         last_name: "",
@@ -13,23 +12,21 @@ const Profile = () => {
         phone: "",
         address: "",
     });
-
+    const [loading, setLoading] = useState(true);
     const [editMode, setEditMode] = useState(false);
 
     // ✅ Fetch user details on mount
     useEffect(() => {
-        if (!id) {
-            console.error("❌ No User ID found in localStorage");
-            return;
-        }
-
-        axios.get(`http://localhost:5000/profile/${id}`)
-            .then((res) => {
-                console.log("✅ User Data Fetched:", res.data);
-                setFormData(res.data); // Set user data
+        axios.get(`http://localhost:5000/profile/${userId}`)
+            .then(res => {
+                setFormData(res.data);
+                setLoading(false);
             })
-            .catch((err) => console.error("❌ Error fetching user:", err));
-    }, [id]);
+            .catch(err => {
+                console.error("Error fetching user:", err);
+                setLoading(false);
+            });
+    }, [userId]);
 
     // ✅ Handle input changes
     const handleChange = (e) => {
@@ -39,14 +36,15 @@ const Profile = () => {
     // ✅ Handle profile update
     const handleUpdate = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:5000/profile/${id}`, formData)
-            .then((res) => {
-                console.log("✅ Profile Updated:", res.data);
+        axios.put(`http://localhost:5000/profile/${userId}`, formData)
+            .then(() => {
                 alert("Profile updated successfully!");
                 setEditMode(false);
             })
-            .catch((err) => console.error("❌ Error updating profile:", err));
+            .catch(err => console.error("Error updating profile:", err));
     };
+
+    if (loading) return <h2>Loading...</h2>;
 
     return (
         <div className="profile-container">
