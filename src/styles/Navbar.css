@@ -1,0 +1,127 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2874f0;
+  padding: 8px 130px;
+  height: 40px;
+  color: white;
+}
+
+/* Logo */
+.navbar-left .logo-link {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-left .logo {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Search Bar */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 3px; /* Adjusted padding */
+  border-radius: 4px;
+  width: 500px;
+  max-width: 60%;
+  height: 30px; /* Set the total height slightly larger */
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 3px;
+  font-size: 14px;
+  width: 100%;
+  height: 30px; /* Set the exact height */
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  color: #2874f0;
+  font-size: 19px; /* Adjust icon size */
+  padding: 4px 3px 0 0;
+  cursor: pointer;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  right: 0;
+  min-width: 180px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Cart Button */
+.cart-button {
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 19px;
+}
+
+.cartlink{
+  text-decoration: none;
+}
+
+.cart-icon {
+  font-size: 18px;
+  color: white;
+}

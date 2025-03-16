@@ -1,0 +1,84 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f3f6;
+}
+
+.auth-box {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.auth-form input {
+    width: calc(100% - 20px); /* Fixing input overflow issue */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* Ensures width includes padding */
+}
+
+/* Fixing password field */
+.password-container {
+    position: relative;
+    width: 100%; /* Ensures it stays within the box */
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* Space for the eye icon */
+    box-sizing: border-box;
+}
+
+.password-container span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 18px;
+}
+
+.auth-form button {
+    background: #fb641b;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.auth-form button:hover {
+    background: #e05a17;
+}
+
+.auth-form p {
+    font-size: 14px;
+}
+
+.auth-form p a {
+    color: #2874f0;
+    text-decoration: none;
+    font-weight: bold;
+}
