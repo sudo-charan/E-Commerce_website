@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import CategoryNavbar from "./components/CategoryNavbar"; // ✅ Import Category Navbar
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Profile from "./Pages/Profile";
@@ -19,17 +20,18 @@ function App() {
 
         if (userToken) {
             setIsAuthenticated(true);
-            setUsername(storedUsername || ""); // Load username from localStorage
+            setUsername(storedUsername || "");
         }
     }, []);
 
     return (
         <Router>
             <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} username={username} />
+            <CategoryNavbar />  {/* ✅ Add Category Navbar below the main Navbar */}
+            
             <Routes>
                 <Route path="/" element={<Home />} />
 
-                {/* Pass setUsername so the username is updated after login/signup */}
                 <Route path="/signin" element={isAuthenticated ? <Navigate to="/" /> : <SignIn setIsAuthenticated={setIsAuthenticated} setUsername={setUsername} />} />
                 <Route path="/signup" element={isAuthenticated ? <Navigate to="/" /> : <SignUp setIsAuthenticated={setIsAuthenticated} setUsername={setUsername} />} />
 

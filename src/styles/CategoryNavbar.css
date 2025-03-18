@@ -1,0 +1,28 @@
+.category-navbar {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-item {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: transform 0.2s;
+}
+
+.category-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+    color: #2874f0;
+}
